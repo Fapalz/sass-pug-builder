@@ -1,4 +1,4 @@
-import {paths} from "../config";
+import paths from "../paths";
 import { src, dest } from "gulp";
 import debug from "gulp-debug";
 

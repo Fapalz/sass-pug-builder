@@ -1,6 +1,5 @@
-"use strict";
-
-import {paths} from "../config";
+import paths from "../paths";
+import { production } from "../helpers"
 import webpack from "webpack";
 import webpackStream from "webpack-stream";
 import { src, dest } from "gulp";
@@ -9,8 +8,7 @@ import rename from "gulp-rename";
 import browsersync from "browser-sync";
 import debug from "gulp-debug";
 
-const webpackConfig = require("../../webpack.config.js"),
-production = process.env.NODE_ENV === 'production';
+const webpackConfig = require("../../webpack.config.js");
 
 webpackConfig.mode = production ? "production" : "development";
 webpackConfig.devtool = production ? false : "source-map";

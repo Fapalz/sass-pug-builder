@@ -1,4 +1,5 @@
-import {paths} from "../config";
+import paths from "../paths";
+import {production} from "../helpers"
 import { src, dest } from 'gulp';
 import pug from "gulp-pug";
 import gulpif from "gulp-if";
@@ -6,8 +7,6 @@ import replace from "gulp-replace";
 import prettyHtml from "gulp-pretty-html";
 import browsersync from "browser-sync";
 
-
-const production = process.env.NODE_ENV === 'production';
 
 const prettyHtmlOption = {
   indent_size: 2,

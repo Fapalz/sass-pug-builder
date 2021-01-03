@@ -1,4 +1,5 @@
-import {paths} from "../config";
+import paths from "../paths";
+import { production } from "../helpers"
 import { src, dest } from "gulp";
 import gulpif from "gulp-if";
 import rename from "gulp-rename";
@@ -12,8 +13,6 @@ import browsersync from "browser-sync";
 import debug from "gulp-debug";
 
 sass.compiler = require('sass');
-
-const production = process.env.NODE_ENV === 'production';
 
 const styles = () => {
   return src(paths.styles.src)
