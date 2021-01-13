@@ -13,7 +13,7 @@ const config = {
     developerName: 'Hayden Bleasel',
     developerURL: 'http://haydenbleasel.com/',
     background: '#020307',
-    path: '/static/favicons/',
+    path: '/favicons/',
     url: 'http://haydenbleasel.com/',
     display: 'standalone',
     orientation: 'portrait',

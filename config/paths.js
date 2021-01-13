@@ -58,7 +58,7 @@ const paths = {
     src: [
       `./${dir.src}/static/favicons/favicon.png`,
     ],
-    dist: `./${dir.dist}/static/favicons/`,
+    dist: `./${dir.dist}/favicons/`,
   },
   dir: {
     src: `./${dir.src}/`,
