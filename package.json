@@ -5,7 +5,8 @@
   "main": "index.js",
   "scripts": {
     "dev": "gulp",
-    "build": "cross-env NODE_ENV=production gulp prod"
+    "build": "cross-env NODE_ENV=production gulp prod",
+    "build:favicons": "gulp icons"
   },
   "repository": {
     "type": "git",
@@ -27,6 +28,7 @@
     "esm": "^3.2.25",
     "gulp": "^4.0.2",
     "gulp-debug": "^4.0.0",
+    "gulp-favicons": "^3.0.0",
     "gulp-if": "^3.0.0",
     "gulp-pretty-html": "^2.0.10",
     "gulp-pug": "^4.0.1",

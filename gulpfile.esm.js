@@ -10,6 +10,7 @@ import scripts from './config/gulp-tasks/scripts';
 import assets from './config/gulp-tasks/assets';
 import staticFolder from './config/gulp-tasks/static';
 import serve from './config/gulp-tasks/serve';
+import favicons from './config/gulp-tasks/favicons';
 // import jsPlugins from './gulp-tasks/js-plugins'
 // import images from './gulp-tasks/images';
 // import webp from './gulp-tasks/webp';
@@ -46,6 +47,10 @@ export const development = series(
 export const prod = series(
     clean,
     parallel(views, styles, scripts, assets, staticFolder)
+);
+
+export const icons = series(
+    favicons
 );
 
 export default development;

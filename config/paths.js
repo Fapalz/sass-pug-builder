@@ -47,11 +47,18 @@ const paths = {
   static: {
     src: [
       `./${dir.src}/static/**/*.*`,
+      `!./${dir.src}/static/favicons/*.*`,
     ],
     dist: `./${dir.dist}/`,
     watch: [
       `./${dir.src}/static/**/*.*`,
     ]
+  },
+  favicons: {
+    src: [
+      `./${dir.src}/static/favicons/favicon.png`,
+    ],
+    dist: `./${dir.dist}/static/favicons/`,
   },
   dir: {
     src: `./${dir.src}/`,
