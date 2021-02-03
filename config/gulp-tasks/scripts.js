@@ -7,6 +7,7 @@ import gulpif from "gulp-if";
 import rename from "gulp-rename";
 import browsersync from "browser-sync";
 import debug from "gulp-debug";
+import plumber from 'gulp-plumber';
 
 const webpackConfig = require("../../webpack.config.js");
 
@@ -15,6 +16,7 @@ webpackConfig.devtool = production ? false : "source-map";
 
 const scripts = () => {
     return src(paths.scripts.src)
+        .pipe(plumber())
         .pipe(webpackStream(webpackConfig), webpack)
         .pipe(gulpif(production, rename({
             suffix: ".min"

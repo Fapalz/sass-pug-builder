@@ -49,7 +49,7 @@ export const prod = series(
     parallel(views, styles, scripts, assets, staticFolder)
 );
 
-export const icons = series(
+export const createFavicons = series(
     favicons
 );
 

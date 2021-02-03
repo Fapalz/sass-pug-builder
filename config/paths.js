@@ -11,7 +11,7 @@ const paths = {
     watch: [
       `./${dir.components}/**/*.pug`,
       `./${dir.src}/pages/**/*.pug`,
-      `./${dir.src}/pug/**/*.pug`,
+      `./${dir.src}/layouts/**/*.pug`,
       `!./${dir.src}/pug/_mixins.pug`
     ]
   },

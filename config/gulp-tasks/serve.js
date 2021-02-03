@@ -15,7 +15,8 @@ const serve = () => {
   browsersync.init({
     server: paths.dir.dist,
     port: 4000,
-    notify: true
+    notify: true,
+    open: false
   });
 
 
