@@ -31,6 +31,9 @@ html(class="page no-js", lang="ru")
 
     block head
       link(rel="stylesheet", href="/styles/main.css")
+      script
+        include ../js/head-script.js
+        
   body.page__body
     noscript Для полной функциональности этого сайта необходимо включить JavaScript.
 
@@ -46,7 +49,10 @@ html(class="page no-js", lang="ru")
 
     
     block page-bottom
-      script(src="/js/home.js" async)
-      script(src="/js/vendors.js" async)
+      script(nomodule  src="/js/main.legacy.js" defer)
+      script(nomodule  src="/js/vendors.legacy.js" defer)
+      script(type="module" src="/js/main.mjs")
+      script(type="module" src="/js/vendors.mjs")
 
-    script(src="/js/runtime.js" async)
+    script(nomodule src="/js/runtime.legacy.js" defer)
+    script(type="module" src="/js/runtime.mjs")

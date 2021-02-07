@@ -1,3 +1,4 @@
+import Swiper, { Navigation, Pagination } from 'swiper';
 
 var array = Array.of(1, 2, 3);
 var set = new Set([1, 2, 3]);
@@ -18,3 +19,28 @@ async function f() {
 f().then(()=> {
   console.log('finish')
 });
+
+Swiper.use([Navigation, Pagination]);
+
+// init Swiper:
+var mySwiper = new Swiper('.swiper-container', {
+  // Optional parameters
+  direction: 'vertical',
+  loop: true,
+
+  // If we need pagination
+  pagination: {
+    el: '.swiper-pagination',
+  },
+
+  // Navigation arrows
+  navigation: {
+    nextEl: '.swiper-button-next',
+    prevEl: '.swiper-button-prev',
+  },
+
+  // And if we need scrollbar
+  scrollbar: {
+    el: '.swiper-scrollbar',
+  },
+})

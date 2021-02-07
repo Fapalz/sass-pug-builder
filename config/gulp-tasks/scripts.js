@@ -11,16 +11,20 @@ import plumber from 'gulp-plumber';
 
 const webpackConfig = require("../../webpack.config.js");
 
-webpackConfig.mode = production ? "production" : "development";
-webpackConfig.devtool = production ? false : "source-map";
+webpackConfig.forEach(confing => {
+    confing.mode = production ? "production" : "development";
+    confing.devtool = production ? false : "source-map";
+});
+
+
 
 const scripts = () => {
     return src(paths.scripts.src)
         .pipe(plumber())
-        .pipe(webpackStream(webpackConfig), webpack)
-        .pipe(gulpif(production, rename({
-            suffix: ".min"
-        })))
+        .pipe(webpackStream({config: webpackConfig}), webpack)
+        // .pipe(gulpif(production, rename({
+        //     suffix: ".min"
+        // })))
         .pipe(dest(paths.scripts.dist))
         .pipe(debug({
             "title": "JS files"

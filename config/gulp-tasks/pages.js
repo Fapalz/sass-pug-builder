@@ -19,8 +19,8 @@ const pages = () => {
   return src(paths.pages.src)
     .pipe(pug())
     .pipe(prettyHtml(prettyHtmlOption))
-    .pipe(gulpif(production, replace(".css", ".min.css")))
-    .pipe(gulpif(production, replace(".js", ".min.js")))
+    // .pipe(gulpif(production, replace(".css", ".min.css")))
+    // .pipe(gulpif(production, replace(".js", ".min.js")))
     .pipe(dest(paths.pages.dist))
     .pipe(browsersync.stream());
 }

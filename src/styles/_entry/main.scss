@@ -1,10 +1,16 @@
-@import "swiper/swiper";
+@import "../themes/default";
+@import "./libraries";
 
-body {
-  color: red;
-}
+@import "../functions";
 
-.swiper-container {
-    width: 600px;
-    height: 300px;
-}
+@import "./plugins";
+
+@import "../extends";
+@import "../fonts";
+@import "../layouts/default";
+
+
+@import "./components";
+
+
+@import "../common";

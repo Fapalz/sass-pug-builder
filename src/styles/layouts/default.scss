@@ -1,0 +1,42 @@
+.page {
+  $self: &;
+
+  &__body {
+    .js.is-loading & {
+      overflow: hidden;
+    }
+  }
+
+  &__inner {
+    display: flex;
+    flex-direction: column;
+    min-height: 100vh;
+    min-height: calc(var(--vh) * 100);
+    overflow-x: hidden;
+  }
+
+  &__content {
+    flex-grow: 1;
+  }
+
+  &__footer-wrapper {
+    flex-shrink: 0;
+  }
+
+  &__preloader {
+    display: block;
+    position: fixed;
+    z-index: $zindex-preloader;
+    top: 0;
+    right: 0;
+    bottom: 0;
+    left: 0;
+    background-color: #000;
+
+
+    .no-js &,
+    .is-loaded & {
+      display: none;
+    }
+  }
+}

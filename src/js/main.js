@@ -1,6 +1,6 @@
 
 import 'custom-event-polyfill';
-import Swiper, { Navigation, Pagination } from 'swiper';
+//import Swiper, { Navigation, Pagination } from 'swiper';
 
 async function f() {
 
@@ -32,29 +32,6 @@ for (let value of generator) {
 
 helper();
 
-Swiper.use([Navigation, Pagination]);
 
-// init Swiper:
-var mySwiper = new Swiper('.swiper-container', {
-  // Optional parameters
-  direction: 'vertical',
-  loop: true,
-
-  // If we need pagination
-  pagination: {
-    el: '.swiper-pagination',
-  },
-
-  // Navigation arrows
-  navigation: {
-    nextEl: '.swiper-button-next',
-    prevEl: '.swiper-button-prev',
-  },
-
-  // And if we need scrollbar
-  scrollbar: {
-    el: '.swiper-scrollbar',
-  },
-})
 
 alert('Hello');

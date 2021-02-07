@@ -24,7 +24,7 @@ const paths = {
     watch: [
       `./${dir.components}/**/*.{scss,sass}`,
       `./${dir.src}/styles/**/*.{scss,sass}`,
-      `!./${dir.src}/styles/_entry/*.{scss,sass}`
+      //`!./${dir.src}/styles/_entry/*.{scss,sass}`
     ]
   },
   scripts: {
