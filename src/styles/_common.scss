@@ -1,4 +1,5 @@
 .swiper-container {
     width: 600px;
     height: 300px;
+    background-color: map-get($map: $colors, $key: 'red')
 }

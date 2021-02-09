@@ -11,23 +11,42 @@ if (~navigator.appVersion.indexOf("Mac")) cth('osx');
 if (~['iPad', 'iPhone', 'iPod'].indexOf(navigator.platform)) cth('ios');
 if (~navigator.appVersion.indexOf("Linux")) cth('linux');
 
-// Добавление 1vh (использование: height: 100vh; height: calc(var(--vh, 1vh) * 100);) для фикса 100vh на мобилках
-let vh = window.innerHeight * 0.01;
-document.documentElement.style.setProperty('--vh', `${vh}px`);
-window.addEventListener('resize', () => {
-  let vh = window.innerHeight * 0.01;
-  document.documentElement.style.setProperty('--vh', `${vh}px`);
-});
 
-// Добавление css-scroll-size для борьбы с проблемами скроллируемых блоков
-document.addEventListener("DOMContentLoaded", () => {
-  const outer = document.createElement('div');
-  const inner = document.createElement('div');
-  outer.style.overflow = 'scroll';
-  outer.classList.add('scrollbar');
-  document.body.appendChild(outer);
-  outer.appendChild(inner);
-  const scrollbarSize = outer.offsetWidth - inner.offsetWidth;
-  document.body.removeChild(outer);
-  document.documentElement.style.setProperty('--css-scroll-size', `${scrollbarSize}px`);
-});
+var hcv = ('CSS' in window) && CSS.supports('color', 'var(--color-var)');
+console.log(hcv)
+
+if (!hcv) {
+  var cfStyle = document.getElementById('maincss');
+  if (cfStyle) {
+    var href = cfStyle.getAttribute('href');
+    href = href.replace('main.css', '/fallback/main.css');
+    cfStyle.setAttribute('href', href);
+  }
+}
+
+if(hcv) {
+  // Добавление 1vh (использование: height: 100vh; height: calc(var(--vh, 1vh) * 100);) для фикса 100vh на мобилках
+  let vh = window.innerHeight * 0.01;
+  document.documentElement.style.setProperty('--vh', vh + 'px');
+  window.addEventListener('resize', function() {
+    let vh = window.innerHeight * 0.01;
+    document.documentElement.style.setProperty('--vh', vh + 'px');
+  });
+
+  // Добавление css-scroll-size для борьбы с проблемами скроллируемых блоков
+  document.addEventListener("DOMContentLoaded", function(){
+    const outer = document.createElement('div');
+    const inner = document.createElement('div');
+    outer.style.overflow = 'scroll';
+    outer.classList.add('scrollbar');
+    document.body.appendChild(outer);
+    outer.appendChild(inner);
+    const scrollbarSize = outer.offsetWidth - inner.offsetWidth;
+    document.body.removeChild(outer);
+    document.documentElement.style.setProperty('--css-scroll-size', scrollbarSize + 'px');
+  });
+}
+
+
+
+

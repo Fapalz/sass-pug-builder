@@ -12,9 +12,9 @@ html(class="page no-js", lang="ru")
     meta(name="format-detection", content="address=no")
     meta(name="format-detection", content="email=no")
     link(rel="dns-prefetch" href="//fonts.googleapis.com")
+    
     link(rel="preconnect" href="https://fonts.gstatic.com/" crossorigin)
-
-
+    | <link href="https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,400;0,700;1,400&display=swap" rel="stylesheet">
     //- Фавиконки (https://realfavicongenerator.net)
     //- link(rel="apple-touch-icon", sizes="180x180", href="/img/favicon/apple-touch-icon.png")
     //- link(rel="icon", type="image/png", sizes="32x32", href="/img/favicon/favicon-32x32.png")
@@ -26,13 +26,16 @@ html(class="page no-js", lang="ru")
     //- meta(name="msapplication-navbutton-color", content="#000")
     //- meta(name="apple-mobile-web-app-status-bar-style", content="#000")
 
+    
+
     block meta
       title Home
 
     block head
-      link(rel="stylesheet", href="/styles/main.css")
+      link(rel="stylesheet", href="/styles/main.css" id="maincss")
       script
         include ../js/head-script.js
+      
         
   body.page__body
     noscript Для полной функциональности этого сайта необходимо включить JavaScript.

@@ -27,6 +27,9 @@ const paths = {
       //`!./${dir.src}/styles/_entry/*.{scss,sass}`
     ]
   },
+  stylesIE: {
+    dist: `./${dir.dist}/styles/fallback/`,
+  },
   scripts: {
     src: `./${dir.src}/js/main.js`,
     dist: `./${dir.dist}/js/`,

@@ -6,6 +6,7 @@ import { parallel, series } from 'gulp';
 import clean from './config/gulp-tasks/clean';
 import views from './config/gulp-tasks/pages';
 import styles from './config/gulp-tasks/styles';
+import stylesIE from './config/gulp-tasks/styles-ie';
 import scripts from './config/gulp-tasks/scripts';
 import assets from './config/gulp-tasks/assets';
 import staticFolder from './config/gulp-tasks/static';
@@ -46,7 +47,7 @@ export const development = series(
 
 export const prod = series(
     clean,
-    parallel(views, styles, scripts, assets, staticFolder)
+    parallel(views, styles, stylesIE, scripts, assets, staticFolder)
 );
 
 export const createFavicons = series(
